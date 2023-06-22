@@ -202,7 +202,7 @@ impl fmt::Debug for ScopedSto<'_> {
 ///
 /// [ScopedSto::from] is a shortcut to intern a string in this `Repository`.
 #[cfg(feature = "global")]
-#[cfg_attr(doc_cfg, doc(cfg(feature = "global")))]
+#[cfg_attr(docsrs, doc(cfg(feature = "global")))]
 pub fn repository() -> &'static Repository {
     use once_cell::sync::OnceCell;
     static REPO: OnceCell<Repository> = OnceCell::new();
@@ -229,7 +229,7 @@ impl ScopedSto<'static> {
     ///     }
     /// # }
     /// ```
-    #[cfg_attr(doc_cfg, doc(cfg(feature = "global")))]
+    #[cfg_attr(docsrs, doc(cfg(feature = "global")))]
     #[inline(always)]
     pub fn from<S>(string: S) -> Self
     where
@@ -240,7 +240,7 @@ impl ScopedSto<'static> {
 }
 
 #[cfg(feature = "global")]
-#[cfg_attr(doc_cfg, doc(cfg(feature = "global")))]
+#[cfg_attr(docsrs, doc(cfg(feature = "global")))]
 impl From<&str> for ScopedSto<'static> {
     fn from(value: &str) -> Self {
         Self::from(value)
@@ -248,7 +248,7 @@ impl From<&str> for ScopedSto<'static> {
 }
 
 #[cfg(feature = "global")]
-#[cfg_attr(doc_cfg, doc(cfg(feature = "global")))]
+#[cfg_attr(docsrs, doc(cfg(feature = "global")))]
 impl From<String> for ScopedSto<'static> {
     fn from(value: String) -> Self {
         Self::from(value)
@@ -256,7 +256,7 @@ impl From<String> for ScopedSto<'static> {
 }
 
 #[cfg(feature = "global")]
-#[cfg_attr(doc_cfg, doc(cfg(feature = "global")))]
+#[cfg_attr(docsrs, doc(cfg(feature = "global")))]
 impl From<std::borrow::Cow<'_, str>> for ScopedSto<'static> {
     fn from(value: std::borrow::Cow<'_, str>) -> Self {
         Self::from(value)
@@ -264,7 +264,7 @@ impl From<std::borrow::Cow<'_, str>> for ScopedSto<'static> {
 }
 
 #[cfg(feature = "global")]
-#[cfg_attr(doc_cfg, doc(cfg(feature = "global")))]
+#[cfg_attr(docsrs, doc(cfg(feature = "global")))]
 impl std::str::FromStr for ScopedSto<'static> {
     type Err = std::convert::Infallible;
 
