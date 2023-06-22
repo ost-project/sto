@@ -1,6 +1,6 @@
 [package]
 name = "sto"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["unbyte <i@shangyes.net>"]
 description = "Yet another string interner"
 keywords = ["string", "interner"]
